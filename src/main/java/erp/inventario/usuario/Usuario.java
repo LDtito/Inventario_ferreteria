@@ -1,5 +1,6 @@
 package erp.inventario.usuario;
 
+import erp.inventario.compania.Compania;
 import erp.inventario.rol.Rol;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,4 +21,7 @@ public class Usuario {
 
     @ManyToOne
     private Rol rol;
+
+    @ManyToOne
+    private Compania compania;
 }
