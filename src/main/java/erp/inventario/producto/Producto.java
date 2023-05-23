@@ -3,6 +3,7 @@ package erp.inventario.producto;
 import java.math.BigDecimal;
 
 import erp.inventario.categorias.Categoria;
+import erp.inventario.rebastecimiento.Rebastecimiento;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -24,7 +25,7 @@ private BigDecimal precioUnitario;
 @ManyToOne
 private Categoria categoria;
 @ManyToOne
-private Producto reabastesimiento;
+private Rebastecimiento reabastesimiento;
 
 }
 
