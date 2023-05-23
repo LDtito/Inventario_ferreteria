@@ -23,6 +23,8 @@ private BigDecimal precioUnitario;
 
 @ManyToOne
 private Categoria categoria;
-
+@ManyToOne
+private Producto reabastesimiento;
 
 }
+
