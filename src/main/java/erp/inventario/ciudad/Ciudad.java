@@ -16,12 +16,5 @@ public class Ciudad {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String nombreCiudad;
-    public String getNombreCiudad() {
-        return nombreCiudad;
-    }
-
-    public void setNombreCiudad(String nombreCiudad) {
-        this.nombreCiudad = nombreCiudad;
-    }
        
 }

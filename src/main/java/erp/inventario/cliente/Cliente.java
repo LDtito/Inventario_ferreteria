@@ -1,6 +1,7 @@
 package erp.inventario.cliente;
 
-import java.sql.Date;
+
+import java.sql.Timestamp;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,7 +16,7 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long Id;
     private String nombreCliente;
-    private Date fechaNacimiento;
+    private Timestamp fechaNacimiento;
     private String direccion;
     private String correoElectronico;
         
