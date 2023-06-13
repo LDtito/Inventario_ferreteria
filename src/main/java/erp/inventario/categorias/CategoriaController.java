@@ -2,6 +2,7 @@ package erp.inventario.categorias;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +23,7 @@ public class CategoriaController {
 
 
     @PostMapping("/")
+    @PreAuthorize("hasAuthority('Todas las Categorias')")
     public Categoria save (@RequestBody Categoria entity){
         return service.save(entity);
     }
