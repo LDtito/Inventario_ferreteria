@@ -21,6 +21,7 @@ private long id;
 private String nombre;
 private String descripcion;
 private BigDecimal precioUnitario;
+private int cantidad;
 
 @ManyToOne
 private Categoria categoria;
