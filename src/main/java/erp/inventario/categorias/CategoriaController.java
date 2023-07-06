@@ -12,7 +12,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @RestController
+@Tag(name = "Controlador de categorias")
 @RequestMapping("/api/categoria")
 @CrossOrigin({"*"})
 public class CategoriaController {
@@ -22,6 +26,7 @@ public class CategoriaController {
 
 
     @PostMapping("/")
+     @Operation(summary = "Obtiene todas las categorias")
     public Categoria save (@RequestBody Categoria entity){
         return service.save(entity);
     }
@@ -29,11 +34,13 @@ public class CategoriaController {
     // Get 2
 
     @GetMapping("/{id}/")
+     @Operation(summary = "Obtiene todas las categorias")
     public Categoria findById(@PathVariable long id){
         return service.findById(id);
     }
 
     @GetMapping("/")
+     @Operation(summary = "Obtiene todas las categorias")
     public List<Categoria> findAll(){
         return service.findAll();
     }
@@ -42,6 +49,7 @@ public class CategoriaController {
     // Put
 
     @PutMapping("/")
+     @Operation(summary = "Obtiene todas las categorias")
     public Categoria update (@RequestBody Categoria entity){
         return service.save(entity);
     }
@@ -49,6 +57,7 @@ public class CategoriaController {
     //Delete
 
     @DeleteMapping("/{id}/")
+    @Operation(summary = "Obtiene todas las categorias")
     public void deeteById(@PathVariable long id){
         service.deleteById(id);
     }
