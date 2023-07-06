@@ -1,4 +1,4 @@
-package erp.inventario.compania;
+package erp.inventario.reabastecimiento;
 
 import java.lang.reflect.Field;
 import java.util.List;
@@ -20,39 +20,51 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 
+
 @RestController
-@RequestMapping("/api/compania")
+@RequestMapping("/api/reabastecimiento")
 @CrossOrigin({"*"})
-public class CompaniaController {
-    @Autowired
-    CompaniaService Service;
-    @GetMapping("/{id}/")
-    public Compania findById(@PathVariable long id){
-        return Service.findById(id);
-    }
-    @GetMapping ("/")
-    public List<Compania> findAll(){
-        return Service.findAll();
-    }
-    @PostMapping("/")
-    public Compania save (@RequestBody Compania entity){
-        return Service.save(entity);
-    }
+public class ReabastecimientoController {
 
-    @PutMapping ("/")
-    public Compania update (@RequestBody Compania entity){
-        return Service.save(entity);
-    }
+@Autowired
+ReabastecimientoService service;
 
 
-    @DeleteMapping("/{id}/")
-    public void deleteById(@PathVariable long id){
-        Service.deleteById(id);
-    }
-     @PatchMapping("/{id}/")
-    public Compania partialUpdate(@PathVariable long id, @RequestBody Map<String, Object> fields){
+@PostMapping("/")
+public Reabastecimiento save (@RequestBody Reabastecimiento entity){
+return service.save(entity);
+}
 
-        Compania entity = findById(id);
+// Get 2
+
+@GetMapping("/{id}/")
+public Reabastecimiento findById(@PathVariable long id){
+return service.findById(id);
+}
+
+@GetMapping("/")
+public List<Reabastecimiento> findAll(){
+return service.findAll();
+}
+
+
+// Put
+
+@PutMapping("/")
+public Reabastecimiento update (@RequestBody Reabastecimiento entity){
+return service.save(entity);
+}
+
+//Delete
+
+@DeleteMapping("/{id}/")
+public void deeteById(@PathVariable long id){
+service.deleteById(id);
+}
+ @PatchMapping("/{id}/")
+    public Reabastecimiento partialUpdate(@PathVariable long id, @RequestBody Map<String, Object> fields){
+
+        Reabastecimiento entity = findById(id);
 
         // itera sobre los campos que se desean actualizar
         for (Map.Entry<String, Object> field : fields.entrySet()) {
@@ -61,7 +73,7 @@ public class CompaniaController {
             
             // utiliza reflection para establecer el valor del campo en la entidad
             try {
-                Field campoEntidad = Compania.class.getDeclaredField(fieldName);
+                Field campoEntidad = Reabastecimiento.class.getDeclaredField(fieldName);
                 campoEntidad.setAccessible(true);
                 ObjectMapper mapper = new ObjectMapper();
                 mapper.registerModule(new JavaTimeModule());
@@ -72,6 +84,5 @@ public class CompaniaController {
         }
         return update(entity);
     }
-
 
 }

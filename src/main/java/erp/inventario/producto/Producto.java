@@ -3,7 +3,7 @@ package erp.inventario.producto;
 import java.math.BigDecimal;
 
 import erp.inventario.categorias.Categoria;
-import erp.inventario.rebastecimiento.Rebastecimiento;
+import erp.inventario.reabastecimiento.Reabastecimiento;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -26,7 +26,7 @@ private int cantidad;
 @ManyToOne
 private Categoria categoria;
 @ManyToOne
-private Rebastecimiento reabastesimiento;
+private Reabastecimiento reabastesimiento;
 
 }
 

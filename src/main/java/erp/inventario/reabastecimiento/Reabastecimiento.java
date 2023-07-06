@@ -1,4 +1,4 @@
-package erp.inventario.rebastecimiento;
+package erp.inventario.reabastecimiento;
 
 import java.sql.Date;
 
@@ -10,12 +10,12 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Rebastecimiento {
+public class Reabastecimiento {
 //  Delimitador de acceso , tipo de dato, nombre del atributo
 @Id
 @GeneratedValue(strategy = GenerationType.AUTO)
 private long id;
-private int productoRebastecimiento;
-private int cantidadRebastecimiento;
-private Date fechaRebastecimiento;
+private int productoReabastecimiento;
+private int cantidadReabastecimiento;
+private Date fechaReabastecimiento;
 }

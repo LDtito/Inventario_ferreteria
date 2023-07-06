@@ -1,18 +1,18 @@
-package erp.inventario.rebastecimiento;
+package erp.inventario.reabastecimiento;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class RebastecimientoService {
+public class ReabastecimientoService {
 @Autowired
-    RebastecimientoRepository repository;
+    ReabastecimientoRepository repository;
 //CRUD
 
 //Create
 
-public Rebastecimiento save( Rebastecimiento entity){
+public Reabastecimiento save( Reabastecimiento entity){
     return repository.save(entity);
 
 }
@@ -23,11 +23,11 @@ public void deleteById(long id){
 }
 
 //get
-public Rebastecimiento findById(long id){
+public Reabastecimiento findById(long id){
     return repository.findById(id).orElse(null);
 }
 
-public List<Rebastecimiento> findAll(){
+public List<Reabastecimiento> findAll(){
     return repository.findAll();
 }
 
